@@ -17,6 +17,9 @@ exports.byDirector = function(db, director, callback) {
 	var find = { 'director' : director };
 	var sort = { 'title' : 1 };
 	db.collection('movies').find(find).sort(sort).toArray(function(error, docs) {
+		if (error) {
+			console.log("An error has occurred:\n", error);
+		}
 		callback(error, docs);
 	});
 };
