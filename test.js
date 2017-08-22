@@ -36,7 +36,7 @@ describe('dbInterface', function() {
    */
   it('can query data by director', function(done) {
     dbInterface.byDirector(db, 'Irvin Kershner', function(error, docs) {
-      assert.ifError(error);gi
+      assert.ifError(error);
       assert.ok(Array.isArray(docs));
       assert.equal(docs.length, 1);
       assert.equal(docs[0].title, 'The Empire Strikes Back');
